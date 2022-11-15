@@ -10,7 +10,7 @@
         </a>
     </header>
     <div class="page-heading">
-        <h3>Profile Statistics</h3>
+        <h3>User Dashboard</h3>
     </div>
     {{-- message --}}
     {!! Toastr::message() !!}
@@ -28,7 +28,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-8">
-                                        <h6 class="text-muted font-semibold">Activity Log</h6>
+                                        <h6 class="text-muted font-semibold">Your Files</h6>
                                         <h6 class="font-extrabold mb-0">{{ $activity_logs }}</h6>
                                     </div>
                                 </div>
@@ -45,7 +45,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-8">
-                                        <h6 class="text-muted font-semibold">User Activity log</h6>
+                                        <h6 class="text-muted font-semibold">Shared Files</h6>
                                         <h6 class="font-extrabold mb-0">{{ $user_activity_logs }}</h6>
                                     </div>
                                 </div>
@@ -62,7 +62,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-8">
-                                        <h6 class="text-muted font-semibold">User Total</h6>
+                                        <h6 class="text-muted font-semibold">Total Files</h6>
                                         <h6 class="font-extrabold mb-0">{{ $users }}</h6>
                                     </div>
                                 </div>
@@ -282,7 +282,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                
+
                                             <div class="col-md-4">
                                                 <label>Status</label>
                                             </div>
