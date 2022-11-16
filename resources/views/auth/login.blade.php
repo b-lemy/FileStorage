@@ -4,8 +4,10 @@
         <div class="row h-100">
             <div class="col-lg-5 col-12">
                 <div id="auth-left">
-                    <div class="auth-logo">
-                        <a href="index.html"><img src="assets/images/logo/logo.png" alt="Logo"></a>
+                    <div class="auth-logo my-0">
+                        <a href="index.html">
+                            <img src="{{ URL::to('images/mkcb.png') }}" class=" px-15 max-w-full h-auto w-auto rounded-lg" alt="Logo" srcset="">
+                        </a>
                     </div>
                     {{-- message --}}
                     {!! Toastr::message() !!}
@@ -57,6 +59,7 @@
             </div>
             <div class="col-lg-7 d-none d-lg-block">
                 <div id="auth-right">
+                    dkddfjfkj
                 </div>
             </div>
         </div>

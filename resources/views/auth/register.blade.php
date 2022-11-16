@@ -6,7 +6,9 @@
             <div class="col-lg-5 col-12">
                 <div id="auth-left">
                     <div class="auth-logo">
-                        <a href="index.html"><img src="{{ URL::to('assets/images/logo/logo.png') }}" alt="Logo"></a>
+                        <a href="index.html">
+                            <img src="{{ URL::to('images/mkcb.png') }}" class=" px-15 max-w-full h-auto w-auto rounded-lg" alt="Logo" srcset="">
+                        </a>
                     </div>
                     <h1 class="auth-title">Sign Up</h1>
                     <p class="auth-subtitle mb-5">Input your data to register to our website.</p>
@@ -53,13 +55,22 @@
                             @enderror
                         </div>
 
+
                         <div class="form-group position-relative has-icon-left mb-4">
                             <fieldset class="form-group">
-                                <select class="form-select @error('role_name') is-invalid @enderror" name="role_name" id="role_name">
+
+
+                                <select class="form-select @error('role_name') is-invalid @enderror" name="role_name" data-mce-placeholder="Select role" id="role_name">
                                     <option selected disabled>Select Role Name</option>
-                                    <option value="Admin">Admin</option>
-                                    <option value="Super Admin">Super Admin</option>
-                                    <option value="Normal User">Normal User</option>
+                                    @if ($roles->count())
+
+                                    @foreach($roles as $role)
+                                        <option value={{$role->role_type}}>{{$role->role_type}}</option>
+                                    @endforeach
+{{--                                    <option value="Admin">Admin</option>--}}
+{{--                                    <option value="Super Admin">Super Admin</option>--}}
+{{--                                    <option value="Normal User">Normal User</option>--}}
+                                    @endif
                                 </select>
                                 <div class="form-control-icon">
                                     <i class="bi bi-exclude"></i>

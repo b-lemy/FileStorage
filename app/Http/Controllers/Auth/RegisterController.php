@@ -16,8 +16,10 @@ class RegisterController extends Controller
 {
     public function register()
     {
-        $role = DB::table('role_type_users')->get();
-        return view('auth.register',compact('role'));
+
+        $roles = DB::table('role_type_users')->get();
+
+        return view('auth.register',compact('roles'));
     }
     public function storeUser(Request $request)
     {
@@ -32,7 +34,7 @@ class RegisterController extends Controller
 
         $dt        = Carbon::now();
         $todayDate = $dt->toDayDateTimeString();
-        
+
         User::create([
             'firstname'      => $request->firstname,
             'lastname'      => $request->lastname,
