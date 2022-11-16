@@ -14,12 +14,26 @@
                     <form method="POST" action="{{ route('register') }}" class="md-float-material">
                         @csrf
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="text" class="form-control form-control-lg @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" placeholder="Enter Your Name">
+                            <input type="text" class="form-control form-control-lg @error('name') is-invalid @enderror" name="firstname" value="{{ old('firstname') }}" placeholder="Enter Your FirstName">
+
                             <div class="form-control-icon">
                                 <i class="bi bi-person"></i>
                             </div>
                             @error('name')
                                 <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                        <div class="form-group position-relative has-icon-left mb-4">
+
+                            <input type="text" class="form-control form-control-lg @error('name') is-invalid @enderror" name="lastname" value="{{ old('lastname') }}" placeholder="Enter Your LastName">
+
+                            <div class="form-control-icon">
+                                <i class="bi bi-person"></i>
+                            </div>
+                            @error('name')
+                            <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
