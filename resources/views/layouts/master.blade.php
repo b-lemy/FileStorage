@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ URL::to('assets/vendors/bootstrap-icons/bootstrap-icons.css') }}">
     <link rel="stylesheet" href="{{ URL::to('assets/css/app.css') }}">
     <link rel="shortcut icon" href="{{ URL::to('assets/images/favicon.svg') }}" type="image/x-icon">
-    <link rel="stylesheet" href="{{ URL::to('assets/vendors/simple-datatables/style.css') }}">
+{{--    <link rel="stylesheet" href="{{ URL::to('assets/vendors/simple-datatables/style.css') }}">--}}
     <link rel="stylesheet" href="{{ URL::to('assets/css/mystyles.css') }}">
 
 
@@ -27,10 +27,10 @@
     .form-group[class*=has-icon-].has-icon-left .form-select {
     padding-left: 2.5rem;
 }
-    .main{
-        background-color: #0c4128;
-        margin-top: 0;
-    }
+    /*.main{*/
+    /*    background-color: #0c4128;*/
+    /*    margin-top: 0;*/
+    /*}*/
 </style>
 
 <body>
@@ -40,16 +40,16 @@
         @yield('content')
     </div>
 
-    <script src="{{ URL::to('assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
+{{--    <script src="{{ URL::to('assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>--}}
     <script src="{{ URL::to('assets/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ URL::to('assets/vendors/apexcharts/apexcharts.js') }}"></script>
     <script src="{{ URL::to('assets/js/pages/dashboard.js') }}"></script>
     <script src="{{ URL::to('assets/js/main.js') }}"></script>
 
-    <script src="{{ URL::to('assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
+{{--    <script src="{{ URL::to('assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>--}}
     <script src="{{ URL::to('assets/js/bootstrap.bundle.min.js') }}"></script>
 
-    <script src="{{ URL::to('assets/vendors/simple-datatables/simple-datatables.js') }}"></script>
+{{--    <script src="{{ URL::to('assets/vendors/simple-datatables/simple-datatables.js') }}"></script>--}}
 {{--    <script>--}}
 {{--        // Simple Datatable--}}
 {{--        let table1 = document.querySelector('#table1');--}}

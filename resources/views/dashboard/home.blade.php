@@ -9,18 +9,34 @@
                 <i class="bi bi-justify fs-3"></i>
             </a>
         </header>
-        <div class="page-heading row my-0">
+
+        <div class="page-heading row my-3">
             <div class="col-12 col-lg-10 col-md-8 col-sm-6"><h3>User Dashboard</h3></div>
-            <div class="card col-4 col-lg-2 col-md-4 col-sm-6" data-bs-toggle="modal" data-bs-target="#default">
-                <div class="card-body  d-flex py-2 px-3">
-                    <div class="avatar">
-                        <img class="rounded-full w-3" src="{{ URL::to('/images/'. Auth::user()->avatar) }}"
-                             alt="{{ Auth::user()->avatar }}">
+            <div class="dropdown col-12 col-lg-2 col-md-4 col-sm-6">
+                <button class="dropbtn">
+                    <div class="card-body  d-flex py-2 px-3">
+                        <div class="avatar">
+                            <img class="rounded-full w-3" src="{{ URL::to('/images/'. Auth::user()->avatar) }}"
+                                 alt="{{ Auth::user()->avatar }}">
+                        </div>
+                        <div class=" px-2  pt-1 font-bold">{{ Auth::user()->firstname }}</div>
                     </div>
-                    <div class=" px-2  pt-1 font-bold">{{ Auth::user()->firstname }}</div>
+                </button>
+                <div class="dropdown-content">
+                        <div data-bs-toggle="modal" data-bs-target="#default">
+                            Account
+                        </div>
+                    <div>
+                        <form method="GET" action="{{ route('logout') }}">
+                        @csrf
+                            <button style="none">Logout</button>
+                        </form>
+                    </div>
                 </div>
             </div>
+
         </div>
+
 
         {{-- message --}}
         {!! Toastr::message() !!}

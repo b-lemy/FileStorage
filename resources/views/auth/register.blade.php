@@ -53,11 +53,8 @@
                     @enderror
                 </div>
 
-
                 <div class="form-group position-relative has-icon-left mb-2">
                     <fieldset class="form-group">
-
-
                         <select class="form-select @error('role_name') is-invalid @enderror" name="role_name"
                                 data-mce-placeholder="Select role" id="role_name">
                             <option selected disabled>Select Role Name</option>
