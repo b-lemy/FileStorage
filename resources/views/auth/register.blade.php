@@ -98,7 +98,7 @@
                         <i class="bi bi-shield-check"></i>
                     </div>
                 </div>
-                <button class="btn btn-primary btn-block mt-2">Sign Up</button>
+                <button class="btn btn-success btn-block mt-2">Sign Up</button>
             </form>
             <div class="text-center mt-1 ">
                 <p class='text-gray-600'>Already have an account? <a href="{{ route('login') }}"

@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{{ URL::to('assets/css/app.css') }}">
     <link rel="shortcut icon" href="{{ URL::to('assets/images/favicon.svg') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ URL::to('assets/vendors/simple-datatables/style.css') }}">
+    <link rel="stylesheet" href="{{ URL::to('assets/css/mystyles.css') }}">
 
 
     {{-- message toastr --}}
@@ -26,6 +27,10 @@
     .form-group[class*=has-icon-].has-icon-left .form-select {
     padding-left: 2.5rem;
 }
+    .main{
+        background-color: #0c4128;
+        margin-top: 0;
+    }
 </style>
 
 <body>

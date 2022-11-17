@@ -49,7 +49,7 @@
                         Keep me logged in
                     </label>
                 </div>
-                <button class="btn btn-primary btn-block  mt-1">Log in</button>
+                <button class="btn btn-success btn-block  mt-1">Log in</button>
                 <div class="bg">
                     <p class="text-gray-600">Don't have an account? <a href="{{route('register')}}" class="font-bold">Sign
                             up</a>.</p>

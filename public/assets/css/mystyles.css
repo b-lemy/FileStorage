@@ -45,6 +45,29 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.input{
-    color: black;
+
+.reset{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    min-height: 100vh;
+    background-color: grey;
+
 }
+.reset_container{
+    height: 400px;
+    width: 300px;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 20px;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    font-size: 12px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/*Dashboard*/
+/*.main{*/
+/*    background-color: grey;*/
+/*}*/
