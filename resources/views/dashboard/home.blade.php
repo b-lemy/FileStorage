@@ -29,7 +29,7 @@
                     <div>
                         <form method="GET" action="{{ route('logout') }}">
                         @csrf
-                            <button style="none">Logout</button>
+                            <button class="butn">Logout</button>
                         </form>
                     </div>
                 </div>
