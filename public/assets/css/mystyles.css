@@ -1,0 +1,50 @@
+.login{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    min-height: 100vh;
+    background-color: gray;
+}
+.login_container{
+    height: 480px;
+    width: 300px;
+    padding: 20px;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    font-size: small;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.logo{
+    display: flex;
+    justify-content: center;
+}
+.bg{
+    padding-top: 2px;
+
+}
+
+/*register*/
+.register{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    min-height: 100vh;
+    background-color: grey;
+}
+.register_container{
+    height: 550px;
+    width: 400px;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 20px;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    font-size: 12px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.input{
+    color: black;
+}

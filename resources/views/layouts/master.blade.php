@@ -15,6 +15,7 @@
     <link rel="shortcut icon" href="{{ URL::to('assets/images/favicon.svg') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ URL::to('assets/vendors/simple-datatables/style.css') }}">
 
+
     {{-- message toastr --}}
     <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
     <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
