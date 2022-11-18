@@ -1,3 +1,10 @@
+body{
+    background-color: whitesmoke ;
+
+}
+.sidebar{
+    /*background-color:black;*/
+}
 .login{
     display:flex;
     justify-content: center;
@@ -99,7 +106,8 @@
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 160px;
+    min-width: 170px;
+    cursor: pointer;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
@@ -138,3 +146,38 @@
     outline: none;
     /*background-color: black;*/
 }
+
+.change_password{
+    color: black;
+}
+
+.change_password:hover{
+    color: black;
+    /*background-color: #0c4128;*/
+    /*border-radius: 12px;*/
+    /*border-style: dashed;*/
+
+}
+a:hover{
+    /*background-color: black;*/
+}
+
+/*changepasswordtempalate*/
+
+.pass_page{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    min-height: 70vh;
+    color: white;
+    /*background-color: black;*/
+}
+.pass_page_component{
+    background-color: lightgrey;
+    padding: 30px;
+    border-radius: 13px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+}
+

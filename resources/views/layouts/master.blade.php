@@ -27,7 +27,7 @@
     .form-group[class*=has-icon-].has-icon-left .form-select {
     padding-left: 2.5rem;
 }
-    /*.main{*/
+    /*.sidebar{*/
     /*    background-color: #0c4128;*/
     /*    margin-top: 0;*/
     /*}*/

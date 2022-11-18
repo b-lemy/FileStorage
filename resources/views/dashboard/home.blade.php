@@ -23,12 +23,13 @@
                     </div>
                 </button>
                 <div class="dropdown-content">
-                        <div data-bs-toggle="modal" data-bs-target="#default">
-                            Account
-                        </div>
+                    <div data-bs-toggle="modal" data-bs-target="#default">Account</div>
+                    <div>
+                        <a class="change_password" href="{{ route('change/password') }}">Change Password</a>
+                    </div>
                     <div>
                         <form method="GET" action="{{ route('logout') }}">
-                        @csrf
+                            @csrf
                             <button class="butn">Logout</button>
                         </form>
                     </div>
@@ -36,7 +37,6 @@
             </div>
 
         </div>
-
 
         {{-- message --}}
         {!! Toastr::message() !!}
@@ -277,13 +277,11 @@
     </div>
 @endsection
 
-
-
 {{-- user profile modal --}}
 <div class="card-body my-0">
     <!--Basic Modal -->
-    <div class="modal fade text-left" id="default" tabindex="-1" aria-labelledby="myModalLabel1" style="display: none;"
-         aria-hidden="true">
+    <div class="modal fade text-left" id="default" tabindex="-1" aria-labelledby="myModalLabel1"
+         style="display: none;" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable" role="document">
             <div class="modal-content">
                 <div class="modal-header">

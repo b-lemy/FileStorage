@@ -1,4 +1,5 @@
-<div id="sidebar" class="active ">
+
+<div id="sidebar" class="active sidebar">
     <div class="sidebar-wrapper active">
         <div class="sidebar-header">
             <div class="d-flex">
@@ -26,16 +27,10 @@
                     <div class="card-body">
                         <div class="badges">
                             @if (Auth::user()->role_name=='Admin')
-                            <span>Name: <span class="fw-bolder">{{ Auth::user()->firstname }}</span></span>
+                            <span>Name: <span class="fw-bolder">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</span></span>
                             <hr>
                             <span>Role Name:</span>
                             <span class="badge bg-success">Admin</span>
-                            @endif
-                            @if (Auth::user()->role_name=='Super Admin')
-                                <span>Name: <span class="fw-bolder">{{ Auth::user()->firstname }}</span></span>
-                                <hr>
-                                <span>Role Name:</span>
-                                <span class="badge bg-info">Super Admin</span>
                             @endif
                             @if (Auth::user()->role_name=='Normal User')
                                 <span>Name: <span class="fw-bolder">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</span></span>
@@ -47,19 +42,14 @@
                     </div>
                 </li>
 
-{{--                <li class="sidebar-item {{set_active(['change/password'])}}">--}}
-{{--                    <a href="{{ route('change/password') }}" class='sidebar-link'>--}}
-{{--                        <i class="bi bi-shield-lock"></i>--}}
-{{--                        <span>Chnage Password</span>--}}
-{{--                    </a>--}}
-{{--                </li>--}}
+
 
                 @if (Auth::user()->role_name=='Admin')
                     <li class="sidebar-title">Page &amp; Controller</li>
                     <li class="sidebar-item  has-sub {{set_active(['userManagement','activity/log','activity/login/logout'])}}">
                         <a href="#" class='sidebar-link'>
                             <i class="bi bi-hexagon-fill"></i>
-                            <span>Maintenain</span>
+                            <span>Maintain</span>
                         </a>
                         <ul class="submenu {{set_active(['userManagement','activity/log','activity/login/logout'])}}">
                             <li class="submenu-item {{set_active(['userManagement'])}}">
