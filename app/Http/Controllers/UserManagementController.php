@@ -4,14 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
-use DB;
+
 use App\Models\User;
-use App\Models\Form;
 use App\Rules\MatchOldPassword;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Session;
-use Auth;
-use Hash;
+
 
 class UserManagementController extends Controller
 {
