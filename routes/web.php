@@ -65,11 +65,7 @@ Route::controller(RegisterController::class)->group(function () {
     Route::post('/register', 'storeUser')->name('register');
 });
 
-// ----------------------------- lock screen --------------------------------//
-Route::controller(LockScreen::class)->group(function () {
-    Route::get('lock_screen', 'lockScreen')->middleware('auth')->name('lock_screen');
-    Route::post('unlock', 'unlock')->name('unlock');
-});
+
 
 // ----------------------------- forget password ----------------------------//
 Route::controller(ForgotPasswordController::class)->group(function () {

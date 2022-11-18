@@ -12,15 +12,15 @@
     <div class="page-heading">
         <div class="page-title">
             <div class="row">
-                <div class="col-12 col-md-6 order-md-1 order-last">
-                    <h3>User Management Control</h3>
+                <div class="col-12 col-md-6  ">
+                    <h5>User Management Control</h5>
                     <p class="text-subtitle text-muted">For user to check they list</p>
                 </div>
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">User Mangement</li>
+                            <li class="breadcrumb-item active" aria-current="page">User Management</li>
                         </ol>
                     </nav>
                 </div>
@@ -51,33 +51,30 @@
                             @foreach ($data as $key => $item)
                                 <tr>
                                     <td class="id">{{ ++$key }}</td>
-                                    <td class="name">{{ $item->name }}</td>
+                                    <td class="name">{{ $item->firstname }} {{ $item->lastname }}</td>
                                     <td class="name">
-                                        <div class="avatar avatar-xl">
+                                        <div class="avatar avatar-md">
                                             <img src="{{ URL::to('/images/'. $item->avatar) }}" alt="{{ $item->avatar }}">
                                         </div>
                                     </td>
                                     <td class="email">{{ $item->email }}</td>
                                     <td class="phone_number">{{ $item->phone_number }}</td>
                                     @if($item->status =='Active')
-                                    <td class="status"><span class="badge bg-success">{{ $item->status }}</span></td>
+                                    <td class="status"><span class="badge bg-success">Active</span></td>
                                     @endif
                                     @if($item->status =='Disable')
-                                    <td class="status"><span class="badge bg-danger">{{ $item->status }}</span></td>
+                                    <td class="status"><span class="badge bg-danger">Disable</span></td>
                                     @endif
                                     @if($item->status ==null)
-                                    <td class="status"><span class="badge bg-danger">{{ $item->status }}</span></td>
+                                    <td class="status"><span class="badge bg-danger">null</span></td>
                                     @endif
                                     @if($item->role_name =='Admin')
                                     <td class="role_name"><span  class="badge bg-success">{{ $item->role_name }}</span></td>
                                     @endif
-                                    @if($item->role_name =='Super Admin')
-                                    <td class="role_name"><span  class="badge bg-info">{{ $item->role_name }}</span></td>
-                                    @endif
-                                    @if($item->role_name =='Normal User')
+                                    @if($item->role_name =='Normal')
                                     <td class="role_name"><span  class=" badge bg-warning">{{ $item->role_name }}</span></td>
                                     @endif
-                                    <td class="text-center">
+                                    <td class="text-center justify-between">
                                         <a href="{{ route('user/add/new') }}">
                                             <span class="badge bg-info"><i class="bi bi-person-plus-fill"></i></span>
                                         </a>
@@ -94,16 +91,6 @@
             </div>
         </section>
     </div>
-    <footer>
-        <div class="footer clearfix mb-0 text-muted ">
-            <div class="float-start">
-                <p>2021 &copy; Soeng Souy</p>
-            </div>
-            <div class="float-end">
-                <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a
-                href="http://soengsouy.com">Soeng Souy</a></p>
-            </div>
-        </div>
-    </footer>
+
 </div>
 @endsection

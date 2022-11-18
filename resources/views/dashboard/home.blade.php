@@ -14,7 +14,7 @@
             <div class="col-12 col-lg-10 col-md-8 col-sm-6"><h3>User Dashboard</h3></div>
             <div class="dropdown col-12 col-lg-2 col-md-4 col-sm-6">
                 <button class="dropbtn">
-                    <div class="card-body  d-flex py-2 px-3">
+                    <div class="card-body  d-flex py-2 px-4">
                         <div class="avatar">
                             <img class="rounded-full w-3" src="{{ URL::to('/images/'. Auth::user()->avatar) }}"
                                  alt="{{ Auth::user()->avatar }}">
