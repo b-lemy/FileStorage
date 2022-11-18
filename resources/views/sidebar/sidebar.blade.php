@@ -100,10 +100,10 @@
                         <li class="submenu-item {{set_active(['form/view/detail'])}}">
                             <a href="{{ route('form/view/detail') }}">Operation</a>
                         </li>
-                        <li class="submenu-item {{set_active(['form/view/detail'])}}">
+                        <li class="submenu-item {{set_active(['form/view/details'])}}">
                             <a href="{{ route('form/view/detail') }}">ICT</a>
                         </li>
-                        <li class="submenu-item {{set_active(['form/view/detail'])}}">
+                        <li class="submenu-item {{set_active(['form/view/detailss'])}}">
                             <a href="{{ route('form/view/detail') }}">Treasury</a>
                         </li>
                     </ul>

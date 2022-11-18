@@ -4,6 +4,7 @@
 @endsection
 @section('content')
     <div id="main" class="main">
+        <div class="min-vh-100">
         <header class="">
             <a href="#" class="burger-btn d-block d-xl-none">
                 <i class="bi bi-justify fs-3"></i>
@@ -262,7 +263,7 @@
                 </div>
             </section>
         </div>
-
+        </div>
         <footer>
             <div class="footer clearfix mb-0 text-muted">
                 <div class="float-start">
