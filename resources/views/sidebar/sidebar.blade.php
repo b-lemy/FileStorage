@@ -1,3 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mkombozi FileSystem</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="{{ URL::to('assets/css/mystyles.css') }}">
+</head>
+
+<body>
 <div id="sidebar" class="active sidebar">
     <div class="sidebar-wrapper active">
         <div class="sidebar-header">
@@ -70,10 +84,10 @@
                     </a>
                     <ul class="submenu {{set_active(['form/staff/new','form/checkbox/new'])}}">
                         <li class="submenu-item {{set_active(['form/staff/new'])}}">
-                            <a href="{{ route('form/staff/new') }}" >OutDoor Documents</a>
+                            <a href="{{ route('form/staff/new') }}" >OutDoor Docs</a>
                         </li>
                         <li class="submenu-item {{set_active(['form/checkbox/new'])}}">
-                            <a href="{{ route('form/checkbox/new') }}">InHouse Documents</a>
+                            <a href="{{ route('form/checkbox/new') }}">InHouse Docs</a>
                         </li>
                     </ul>
                 </li>
@@ -84,7 +98,13 @@
                     </a>
                     <ul class="submenu {{set_active(['form/view/detail'])}}">
                         <li class="submenu-item {{set_active(['form/view/detail'])}}">
-                            <a href="{{ route('form/view/detail') }}">View Detail</a>
+                            <a href="{{ route('form/view/detail') }}">Operation</a>
+                        </li>
+                        <li class="submenu-item {{set_active(['form/view/detail'])}}">
+                            <a href="{{ route('form/view/detail') }}">ICT</a>
+                        </li>
+                        <li class="submenu-item {{set_active(['form/view/detail'])}}">
+                            <a href="{{ route('form/view/detail') }}">Treasury</a>
                         </li>
                     </ul>
                 </li>
@@ -94,3 +114,5 @@
         <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
     </div>
 </div>
+</body>
+</html>
