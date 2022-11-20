@@ -36,6 +36,7 @@
 <body>
     <div id="app">
         @yield('menu')
+        modal
         {{-- content main page --}}
         @yield('content')
     </div>

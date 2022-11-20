@@ -205,3 +205,20 @@ a:hover{
 /*.dis:hover{*/
 /*    background-color: #0c4128 ;*/
 /*}*/
+
+.name{
+    padding-right: 4.5vw;
+}
+.vl{
+    border-left: 1px solid white;
+    height: 30px;
+    padding-right: 1vw;
+}
+
+
+.my_input{
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid gray;
+    outline: none;
+}

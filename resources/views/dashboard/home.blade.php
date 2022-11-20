@@ -11,16 +11,20 @@
             </a>
         </header>
 
-        <div class="page-heading row my-3">
-            <div class="col-12 col-lg-10 col-md-8 col-sm-6"><h3>User Dashboard</h3></div>
-            <div class="dropdown col-12 col-lg-2 col-md-4 col-sm-6">
+        <div class="page-heading row mb-3">
+            <div class="col-12 col-lg-10 col-md-10 col-sm-8"><h3>User Dashboard</h3></div>
+            <div class="dropdown col-12 col-lg-2 col-md-2 col-sm-4">
                 <button class="dropbtn">
-                    <div class="card-body  d-flex py-2 px-4">
-                        <div class="avatar">
-                            <img class="rounded-full w-3" src="{{ URL::to('/images/'. Auth::user()->avatar) }}"
+                    <div class="card-body  d-flex py-2 px-4 justify-around">
+                        <div class="avatar ">
+                            <img class="rounded-full w-4" src="{{ URL::to('/images/'. Auth::user()->avatar) }}"
                                  alt="{{ Auth::user()->avatar }}">
                         </div>
-                        <div class=" px-2  pt-1 font-bold">{{ Auth::user()->firstname }}</div>
+                        <div class="vl"></div>
+
+                        <div class="  pt-1 font-bold name">
+                            {{ Auth::user()->firstname }}
+                        </div>
                     </div>
                 </button>
                 <div class="dropdown-content">
@@ -233,10 +237,11 @@
                         </div>
                         <div class="card-content pb-4">
                             <div class="recent-message d-flex px-4 py-3">
-                                <form class="flex items-center space-x-6">
-                                    <label class="block">
+                                <form class="flex items-center space-x-6" method="POST" enctype="multipart/form-data" action="{{ route('file') }}">
+                                    @csrf
+                                    <label class="block mb-5">
                                         <span class="sr-only">Choose a file/folder</span>
-                                        <input type="file" class="block w-full text-sm text-slate-500
+                                        <input type="file"  name="file" class="block w-full text-sm text-slate-500
                                         file:mr-4 file:py-2 file:px-4
                                         file:rounded-full file:border-0
                                         file:text-sm file:font-semibold
@@ -245,11 +250,27 @@
                                           "/>
 
                                     </label>
+                                    <label class="block mb-5">
+                                        <span class="sr-only">Choose a Branch :</span>
+                                        <input type="text"  name="name" class="block w-full text-sm text-slate-500 mx-4  px-2 rounded-3xl my_input" required />
+
+                                    </label>
+                                    <label class="block mb-5">
+                                        <span class="sr-only">Choose a Department :</span>
+                                        <input type="text"  name="name" class="block w-full text-sm text-slate-500 mx-4  px-2 rounded-3xl"/>
+
+                                    </label>
+                                    <label class="block mb-5">
+                                        <span class="sr-only">Choose a Name :</span>
+                                        <input type="text"  name="name" class="block w-full text-sm text-slate-500 mx-4  px-2 rounded-3xl"/>
+
+                                    </label>
+                                    <div class="px-4">
+                                        <button class='btn btn-block btn-success font-bold mt-5'>Share</button>
+                                    </div>
                                 </form>
                             </div>
-                            <div class="px-4">
-                                <button class='btn btn-block btn-success font-bold mt-5'>Share</button>
-                            </div>
+
                         </div>
                     </div>
                     <div class="card">

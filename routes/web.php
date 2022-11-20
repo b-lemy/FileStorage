@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Auth\LoginController;
@@ -113,3 +114,11 @@ Route::controller(FormController::class)->group(function () {
     Route::get('form/checkbox/new', 'formCheckbox')->middleware('auth')->name('form/checkbox/new');
     Route::post('form/checkbox/save', 'checkboxSaveRecord')->middleware('auth')->name('form/checkbox/save');
 });
+
+
+
+//-------------------------------------- File urls ---------------------------------//
+Route::controller(FileController::class)->group(function (){
+   Route::post('file', 'store')->name('file');
+});
+
