@@ -59,7 +59,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-8">
-                                                <h6 class="text-muted font-semibold">Your Files</h6>
+                                                <h6 class="text-muted font-semibold">Total Files</h6>
                                                 <h6 class="font-extrabold mb-0">{{ $activity_logs }}</h6>
                                             </div>
                                         </div>
@@ -76,7 +76,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-8">
-                                                <h6 class="text-muted font-semibold">Shared Files</h6>
+                                                <h6 class="text-muted font-semibold">Files I shared</h6>
                                                 <h6 class="font-extrabold mb-0">{{ $user_activity_logs }}</h6>
                                             </div>
                                         </div>
@@ -93,7 +93,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-8">
-                                                <h6 class="text-muted font-semibold">Total Files</h6>
+                                                <h6 class="text-muted font-semibold">My Files</h6>
                                                 <h6 class="font-extrabold mb-0">{{ $users }}</h6>
                                             </div>
                                         </div>
@@ -141,7 +141,7 @@
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h4>Recent Files</h4>
+                                        <h4>Files Overview</h4>
                                     </div>
                                     <div class="card-body">
                                         <div id="chart-profile-visit"></div>
@@ -326,8 +326,6 @@
             <div class="footer clearfix mb-0 text-muted">
                 <div class="float-start">
                     <p>2022 &copy; Lema Brian</p>
-
-                    <input type="file" id="file" name="file"/>
                 </div>
 
             </div>
