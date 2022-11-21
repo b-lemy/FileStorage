@@ -13,19 +13,21 @@
     <link rel="stylesheet" href="{{ URL::to('assets/css/pages/auth.css') }}">
 
     {{-- message toastr --}}
-    <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css"> 
+    <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
     <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
     <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
     <link rel="stylesheet" href="{{ URL::to('assets/css/mystyles.css') }}">
-    
+
 </head>
 <style>
     .form-group[class*=has-icon-].has-icon-left .form-select {
-    padding-left: 2.5rem;
-}
+        padding-left: 2.5rem;
+    }
 </style>
 
 <body>
-   @yield('content')
+@yield('menu')
+@yield('content')
+@yield('scripts')
 </body>
 </html>

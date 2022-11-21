@@ -15,7 +15,7 @@ body{
 }
 .login_container{
     height: 480px;
-    width: 300px;
+    width: 330px;
     padding: 20px;
     background-color: whitesmoke;
     border-radius: 20px;
@@ -88,7 +88,7 @@ body{
     border: none;
     cursor: pointer;
     justify-content: flex-end;
-    margin: auto;
+    /*margin: auto;*/
 }
 .dropbtn:focus{
     outline: none;
@@ -207,7 +207,7 @@ a:hover{
 /*}*/
 
 .name{
-    padding-right: 4.5vw;
+    padding-right: 1.5vw;
 }
 .vl{
     border-left: 1px solid white;
@@ -217,8 +217,36 @@ a:hover{
 
 
 .my_input{
-    border-radius: 10px;
-    padding: 10px;
-    border: 1px solid gray;
+    border-radius: 3px;
+    padding: 5px;
+    appearance: none;
+    width: 250px;
+    border: none;
+    background-color: #f2f2f2;
+    /*border: 1px solid gray;*/
     outline: none;
 }
+
+
+/*input type file*/
+
+.uploadBox{
+    outline: none;
+    font-size: 13px;
+    background-color: #f2f2f2;
+    border-radius: 50px;
+    box-shadow: 5px 5px 10px grey;
+    width: 270px;
+    color: black;
+    margin-top: 10px;
+}
+::-webkit-file-upload-button{
+    color: black;
+    padding: 6px;
+    border: none;
+    font-weight: bold;
+    background-color: white;
+    border-radius: 50px;
+    outline: none;
+}
+

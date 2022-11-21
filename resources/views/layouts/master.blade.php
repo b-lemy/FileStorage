@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="{{ URL::to('assets/vendors/bootstrap-icons/bootstrap-icons.css') }}">
     <link rel="stylesheet" href="{{ URL::to('assets/css/app.css') }}">
     <link rel="shortcut icon" href="{{ URL::to('assets/images/favicon.svg') }}" type="image/x-icon">
-{{--    <link rel="stylesheet" href="{{ URL::to('assets/vendors/simple-datatables/style.css') }}">--}}
+    <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ URL::to('assets/vendors/simple-datatables/style.css') }}">
     <link rel="stylesheet" href="{{ URL::to('assets/css/mystyles.css') }}">
 
 
@@ -36,28 +37,37 @@
 <body>
     <div id="app">
         @yield('menu')
-        modal
         {{-- content main page --}}
         @yield('content')
+
     </div>
 
-{{--    <script src="{{ URL::to('assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>--}}
+    <script>
+        // Get a reference to the file input element
+        const inputElement = document.querySelector('input[type="file"]');
+
+        // Create a FilePond instance
+        const pond = FilePond.create(inputElement);
+    </script>
+
+    <script src="{{ URL::to('assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
     <script src="{{ URL::to('assets/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ URL::to('assets/vendors/apexcharts/apexcharts.js') }}"></script>
     <script src="{{ URL::to('assets/js/pages/dashboard.js') }}"></script>
     <script src="{{ URL::to('assets/js/main.js') }}"></script>
+    <script src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
 
-{{--    <script src="{{ URL::to('assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>--}}
+    <script src="{{ URL::to('assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
     <script src="{{ URL::to('assets/js/bootstrap.bundle.min.js') }}"></script>
 
-{{--    <script src="{{ URL::to('assets/vendors/simple-datatables/simple-datatables.js') }}"></script>--}}
-{{--    <script>--}}
-{{--        // Simple Datatable--}}
-{{--        let table1 = document.querySelector('#table1');--}}
-{{--        let dataTable = new simpleDatatables.DataTable(table1);--}}
-{{--    </script>--}}
+    <script src="{{ URL::to('assets/vendors/simple-datatables/simple-datatables.js') }}"></script>
+    <script>
+        // Simple Datatable
+        let table1 = document.querySelector('#table1');
+        let dataTable = new simpleDatatables.DataTable(table1);
+    </script>
 
-{{--    <script src="{{ URL::to('assets/js/main.js') }}"></script>--}}
+    <script src="{{ URL::to('assets/js/main.js') }}"></script>
 
 
 
