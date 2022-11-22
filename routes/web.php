@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FileController;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Auth\LoginController;
@@ -120,5 +121,10 @@ Route::controller(FormController::class)->group(function () {
 Route::controller(FileController::class)->group(function (){
    Route::post('file', 'store')->name('file');
     Route::get('file', 'index')->name('file');
+});
+
+
+Route::get("/hash",function(){
+    return Hash::make("123456789");
 });
 
