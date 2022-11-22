@@ -124,7 +124,7 @@ Route::controller(FileController::class)->group(function (){
 });
 
 
-Route::get("/hash",function(){
-    return Hash::make("123456789");
-});
+//Route::get("/hash",function(){
+//    return Hash::make("123456789");
+//});
 
