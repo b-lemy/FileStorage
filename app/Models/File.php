@@ -16,4 +16,8 @@ class File extends Model
         "receiver"
 
     ];
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }

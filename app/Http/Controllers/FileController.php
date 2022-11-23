@@ -11,11 +11,11 @@ class FileController extends Controller
 
     public function index()
     {
-        $file = User::all();
-
-//        dd($file);
-
-        return view("dashboard.home" , compact("file"));
+//        $file = User::all();
+//
+////        dd($file);
+//
+//        return view("dashboard.home" , compact("file"));
     }
 
 

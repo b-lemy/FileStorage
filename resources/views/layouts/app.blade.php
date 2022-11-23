@@ -28,6 +28,5 @@
 <body>
 @yield('menu')
 @yield('content')
-@yield('scripts')
 </body>
 </html>

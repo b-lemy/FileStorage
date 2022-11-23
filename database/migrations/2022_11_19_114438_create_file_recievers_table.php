@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->foreignId("file_id")->references("id")->on("files");
             $table->foreignId("user_id")->references("id")->on("users");
-
             $table->timestamps();
         });
     }

@@ -58,7 +58,7 @@
                         <select class="form-select @error('role_name') is-invalid @enderror" name="role_name"
                                 data-mce-placeholder="Select role" id="role_name">
                             <option selected disabled>Select Role Name</option>
-                            @if ($roles->count())
+                            @if ($roles->count() > 0)
                                 @foreach($roles as $role)
                                     <option value={{$role->role_type}}>{{$role->role_type}}</option>
                                 @endforeach

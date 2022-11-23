@@ -1,14 +1,13 @@
 <?php
 
 use App\Http\Controllers\FileController;
-use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
-use App\Http\Controllers\FormController;
 use App\Http\Controllers\UserManagementController;
 
 /*
@@ -22,7 +21,7 @@ use App\Http\Controllers\UserManagementController;
 |
 */
 
-/** for side bar menu active */
+/** for sidebar menu active */
 function set_active( $route ) {
     if( is_array( $route ) ){
         return in_array(Request::path(), $route) ? 'active' : '';
@@ -36,10 +35,7 @@ Route::get('/', function () {
 
 Route::group(['middleware'=>'auth'],function()
 {
-    Route::get('dashboard.home',function()
-    {
-        return view('dashboard.home');
-    });
+
     Route::get('dashboard.home',function()
     {
         return view('dashboard.home');
@@ -51,6 +47,7 @@ Auth::routes();
 // ----------------------------- main dashboard ------------------------------//
 Route::controller(HomeController::class)->group(function () {
     Route::get('/home', 'index')->name('home');
+    Route::post('/file', 'store')->name('home');
 });
 
 // -----------------------------login----------------------------------------//
@@ -65,8 +62,6 @@ Route::controller(RegisterController::class)->group(function () {
     Route::get('/register', 'register')->name('register');
     Route::post('/register', 'storeUser')->name('register');
 });
-
-
 
 // ----------------------------- forget password ----------------------------//
 Route::controller(ForgotPasswordController::class)->group(function () {
@@ -100,23 +95,6 @@ Route::controller(UserManagementController::class)->group(function () {
     Route::post('change/password/db', 'changePasswordDB')->name('change/password/db');
 });
 
-// ----------------------------- form staff ------------------------------//
-Route::controller(FormController::class)->group(function () {
-    /** form input full */
-    Route::get('form/staff/new', 'index')->middleware('auth')->name('form/staff/new');
-    Route::post('form/save', 'saveRecord')->name('form/save');
-    Route::get('form/view/detail', 'viewRecord')->middleware('auth')->name('form/view/detail');
-    Route::get('form/view/detail/{id}', 'viewDetail')->middleware('auth');
-    Route::post('form/view/update', 'viewUpdate')->name('form/view/update');
-    Route::get('delete/{id}', 'viewDelete')->middleware('auth');
-
-    /** form checkbox */
-    Route::get('form/checkbox/new', 'formCheckbox')->middleware('auth')->name('form/checkbox/new');
-    Route::post('form/checkbox/save', 'checkboxSaveRecord')->middleware('auth')->name('form/checkbox/save');
-});
-
-
-
 //-------------------------------------- File urls ---------------------------------//
 Route::controller(FileController::class)->group(function (){
    Route::post('file', 'store')->name('file');
@@ -124,7 +102,4 @@ Route::controller(FileController::class)->group(function (){
 });
 
 
-//Route::get("/hash",function(){
-//    return Hash::make("123456789");
-//});
 
