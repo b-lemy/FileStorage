@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('files', function (Blueprint $table) {
             $table->id();
             $table->string("file");
+            $table->string("");
 //            $table->unsignedBigInteger("category_id")->nullable();
 //            $table ->foreign("category_id")->references("id")->on("category");
             $table->foreignId("user_id")->references("id")->on("users");

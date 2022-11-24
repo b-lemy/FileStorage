@@ -60,7 +60,7 @@
                                             </div>
                                             <div class="col-md-8">
                                                 <h6 class="text-muted font-semibold">Total Files</h6>
-                                                <h6 class="font-extrabold mb-0">{{ $activity_logs }}</h6>
+                                                <h6 class="font-extrabold mb-0">{{ $file->count() }}</h6>
                                             </div>
                                         </div>
                                     </div>
@@ -123,8 +123,8 @@
                                                 @foreach ($file as $key => $item)
                                                     <tr>
                                                         <td class="id">{{ ++$key }}</td>
-                                                        <td class="name">{{ $item->branch }}</td>
-                                                        <td class="name">{{ $item->department }}</td>
+                                                        <td class="name">{{ $item->file }}</td>
+                                                        <td class="name">{{ $item->sender->firstname }}</td>
                                                         <td class="email">{{ $item->To }}</td>
                                                     </tr>
                                                 @endforeach
@@ -273,11 +273,11 @@
                             <div class="card-content pb-4">
                                 <div class="recent-message d-flex px-4 py-3">
                                     <form class="flex items-center space-x-6" method="POST"
-                                          enctype="multipart/form-data" action="{{ route('file') }}">
+                                          enctype="multipart/form-data" action="{{ route('home') }}">
                                         @csrf
                                         <label class="block mb-5">
                                             <span class="sr-only">Choose a file/folder</span>
-                                            <input type="file" name="file" id="file" class="uploadBox block
+                                            <input type="file" name="file" class="uploadBox block
                                              w-full text-sm text-slate-50 file:mr-4 file:py-2 file:px-4
 
                                           "/>
@@ -287,7 +287,7 @@
                                             <span class="sr-only">Choose a Branch :</span>
                                             <input type="text" name="name"
                                                    class="  my_input"
-                                                   required/>
+                                                   />
 
                                         </label>
                                         <label class="block mb-5">

@@ -47,7 +47,7 @@ Auth::routes();
 // ----------------------------- main dashboard ------------------------------//
 Route::controller(HomeController::class)->group(function () {
     Route::get('/home', 'index')->name('home');
-    Route::post('/file', 'store')->name('home');
+    Route::post('/home', 'store')->name('home');
 });
 
 // -----------------------------login----------------------------------------//
