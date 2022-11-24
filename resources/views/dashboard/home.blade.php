@@ -126,6 +126,7 @@
                                                         <td class="name">{{ $item->file }}</td>
                                                         <td class="name">{{ $item->sender->firstname }}</td>
                                                         <td class="email">{{ $item->To }}</td>
+                                                        <td class = "delete icon"><a href="{{url('home/download'.$item->id)}}">Download</a></td>
                                                     </tr>
                                                 @endforeach
                                             </tbody>

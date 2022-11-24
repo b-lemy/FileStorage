@@ -5,23 +5,26 @@ namespace App\Http\Controllers;
 use App\Models\File;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Response;
 
 class FileController extends Controller
 {
 
     public function index()
     {
-//        $file = User::all();
-//
-////        dd($file);
-//
-//        return view("dashboard.home" , compact("file"));
+
     }
 
 
-    public function create()
+    public function DLoad($id)
     {
-        //
+        $upload = DB::table('file') -> where('id', $id)->first();
+        $pathToFile = public_path("assets/{$upload->file}");
+        return Response::download($pathToFile);
+
+//        return dd('ok');
+
     }
 
     public function store(Request $request)

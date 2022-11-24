@@ -18,42 +18,39 @@ class HomeController extends Controller
     }
 
 
-
     /** home page */
     public function index()
     {
 
         $users = DB::table('users')->count();
         $user_activity_logs = DB::table('user_activity_logs')->count();
-        $activity_logs = DB::table('activity_logs')->count();
+
         $file = File::all();
-        return view('dashboard.home',compact('users','user_activity_logs','activity_logs','file'));
+        return view('dashboard.home', compact('users', 'user_activity_logs', 'file'));
     }
 
 
-    public function store (FileRequest $request) {
+    public function store(FileRequest $request)
+    {
         $user = Auth::user();
         $filename = $request->file('file')->getClientOriginalName();
-        $path = $request->file('file')->storeAs('file' ,$filename,'public');
+        $path = $request->file('file')->storeAs('file', $filename, 'public');
 
-          $file =  $user->file()->create([
-              'file' => $path,
-               'FileName' => $filename
+        $file = $user->file()->create([
+            'file' => $path,
+            'FileName' => $filename,
+            'branch' => $request->input('branch'),
+            'department' => $request->input('department'),
+            'receiver' => $request->input('receiver'),
+        ]);
 
+        Toastr::success('File Uploaded Successfully :)', 'Success');
 
-
-//              'branch' => $request->input('branch'),
-//              'department' => $request->input('department'),
-//              'receiver' => $request->input('receiver'),
-          ]);
-
-        Toastr::success('File Uploaded Successfully :)','Success');
-
-          return redirect('/home');
-
+        return redirect('/home');
 
 
     }
+
 
 //if($request->hasFile('receipt_attachment')){
 //

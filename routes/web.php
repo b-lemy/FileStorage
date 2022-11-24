@@ -97,8 +97,8 @@ Route::controller(UserManagementController::class)->group(function () {
 
 //-------------------------------------- File urls ---------------------------------//
 Route::controller(FileController::class)->group(function (){
-   Route::post('file', 'store')->name('file');
-    Route::get('file', 'index')->name('file');
+//   Route::post('file', 'store')->name('file');
+    Route::get('home/download/{id}', 'DLoad')->name('home/download');
 });
 
 
