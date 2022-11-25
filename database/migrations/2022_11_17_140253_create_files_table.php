@@ -13,11 +13,10 @@ return new class extends Migration
             $table->id();
             $table->string("file");
             $table->string("filename");
-            $table->string("branch")->nullable();
-            $table->string("department")->nullable();
-            $table->string('receiver')->nullable();
+            $table->unsignedBigInteger("branch")->nullable();
+            $table->unsignedBigInteger("department")->nullable();
+            $table->unsignedBigInteger('receiver')->nullable();
             $table->unsignedBigInteger("category_id")->nullable();
-            $table ->foreign("category_id")->references("id")->on("category");
             $table->foreignId("user_id")->references("id")->on("users");
             $table->timestamps();
         });

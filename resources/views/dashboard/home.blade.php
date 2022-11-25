@@ -114,21 +114,33 @@
                                             <thead>
                                             <tr>
                                                 <th>No</th>
+                                                <th>FileName</th>
+                                                <th>Sender</th>
                                                 <th>Branch</th>
                                                 <th>Department</th>
-                                                <th>To</th>
+                                                <th>Receiver</th>
+                                                <th>Access</th>
                                             </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach ($file as $key => $item)
-                                                    <tr>
-                                                        <td class="id">{{ ++$key }}</td>
-                                                        <td class="name">{{ $item->file }}</td>
-                                                        <td class="name">{{ $item->sender->firstname }}</td>
-                                                        <td class="email">{{ $item->To }}</td>
-                                                        <td class = "delete icon"><a href="{{url('home/download/'.$item->id)}}">Download</a></td>
-                                                    </tr>
-                                                @endforeach
+                                            @foreach ($file as $key => $item)
+                                                <tr>
+                                                    <td class="id">{{ ++$key }}</td>
+                                                    <td class="tableStyle">
+                                                        <img style="width: auto ; height:20px"
+                                                             src="{{ asset('/images/myIcons/file.png') }}"/>
+                                                        {{ $item->filename }}</td>
+                                                    <td class="tableStyle">{{ $item->sender->firstname }}</td>
+                                                    <td class="tableStyle">Head Quarters</td>
+                                                    <td class="tableStyle">ICT</td>
+                                                    <td class="tableStyle">Jassen</td>
+                                                    <td class="delete icon"><a
+                                                                href="{{url('home/download/'.$item->id)}}">
+                                                            <img style="width: auto ; height:20px"
+                                                                 src="{{ asset('/images/myIcons/download.png') }}">
+                                                        </a></td>
+                                                </tr>
+                                            @endforeach
                                             </tbody>
 
 
@@ -288,7 +300,7 @@
                                             <span class="sr-only">Choose a Branch :</span>
                                             <input type="text" name="name"
                                                    class="  my_input"
-                                                   />
+                                            />
 
                                         </label>
                                         <label class="block mb-5">
@@ -332,8 +344,6 @@
             </div>
         </footer>
     </div>
-
-
 
 @endsection
 

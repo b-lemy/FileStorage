@@ -38,7 +38,7 @@ class HomeController extends Controller
 
         $file = $user->file()->create([
             'file' => $path,
-            'fileName' => $filename,
+            'filename' => $filename,
             'branch' => $request->input('branch'),
             'department' => $request->input('department'),
             'receiver' => $request->input('receiver'),

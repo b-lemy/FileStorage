@@ -98,8 +98,7 @@
                 <button class="btn btn-success btn-block mt-2">Sign Up</button>
             </form>
             <div class="text-center mt-1 ">
-                <p class='text-gray-600'>Already have an account? <a href="{{ route('login') }}"
-                                                                     class="font-bold">Login</a>.</p>
+                <p class='text-gray-600'>Already have an account? <a href="{{ route('login') }}" class="font-bold">Login</a>.</p>
             </div>
 
         </div>
