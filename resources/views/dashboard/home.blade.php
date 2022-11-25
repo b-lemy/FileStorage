@@ -289,7 +289,7 @@
                                           enctype="multipart/form-data" action="{{ route('home') }}">
                                         @csrf
                                         <label class="block mb-5">
-                                            <span class="sr-only">Choose a file/folder</span>
+                                            <span style="padding-right: 10px;">Choose a file/folder</span>
                                             <input type="file" name="file" class="uploadBox block
                                              w-full text-sm text-slate-50 file:mr-4 file:py-2 file:px-4
 
