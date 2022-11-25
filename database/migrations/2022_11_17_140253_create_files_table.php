@@ -6,29 +6,24 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+
     public function up()
     {
         Schema::create('files', function (Blueprint $table) {
             $table->id();
             $table->string("file");
-//            $table->string("filename");
-//            $table->unsignedBigInteger("category_id")->nullable();
-//            $table ->foreign("category_id")->references("id")->on("category");
+            $table->string("filename");
+            $table->string("branch")->nullable();
+            $table->string("department")->nullable();
+            $table->string('receiver')->nullable();
+            $table->unsignedBigInteger("category_id")->nullable();
+            $table ->foreign("category_id")->references("id")->on("category");
             $table->foreignId("user_id")->references("id")->on("users");
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+
     public function down()
     {
         Schema::dropIfExists('files');

@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Storage;
 
 class FileController extends Controller
 {
@@ -21,8 +22,8 @@ class FileController extends Controller
     {
         $upload = File::find($id);
         $pathToFile = storage_path("app/public/");
-        return $pathToFile;
-//        return Response::download($pathToFile.$upload->file);
+//        return $pathToFile;
+        return Response::download($pathToFile.$upload->file);
 
 //        return dd('ok');
 
