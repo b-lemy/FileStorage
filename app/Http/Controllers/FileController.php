@@ -19,9 +19,10 @@ class FileController extends Controller
 
     public function DLoad($id)
     {
-        $upload = DB::table('file') -> where('id', $id)->first();
-        $pathToFile = public_path("assets/{$upload->file}");
-        return Response::download($pathToFile);
+        $upload = File::find($id);
+        $pathToFile = storage_path("app/public/");
+        return $pathToFile;
+//        return Response::download($pathToFile.$upload->file);
 
 //        return dd('ok');
 
