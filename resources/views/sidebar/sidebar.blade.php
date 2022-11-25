@@ -77,37 +77,64 @@
                         </ul>
                     </li>
                 @endif
-{{--                <li class="sidebar-item  has-sub {{set_active(['form/staff/new','form/checkbox/new'])}}">--}}
-{{--                    <a href="#" class='sidebar-link'>--}}
-{{--                        <i class="bi bi-file-earmark-medical-fill"></i>--}}
-{{--                        <span>Document Levels</span>--}}
-{{--                    </a>--}}
-{{--                    <ul class="submenu {{set_active(['form/staff/new','form/checkbox/new'])}}">--}}
-{{--                        <li class="submenu-item {{set_active(['form/staff/new'])}}">--}}
-{{--                            <a href="{{ route('form/staff/new') }}" >OutDoor Docs</a>--}}
-{{--                        </li>--}}
-{{--                        <li class="submenu-item {{set_active(['form/checkbox/new'])}}">--}}
-{{--                            <a href="{{ route('form/checkbox/new') }}">InHouse Docs</a>--}}
-{{--                        </li>--}}
-{{--                    </ul>--}}
-{{--                </li>--}}
-{{--                <li class="sidebar-item  has-sub {{set_active(['form/view/detail'])}}">--}}
-{{--                    <a href="#" class='sidebar-link'>--}}
-{{--                        <i class="bi bi-grid-1x2-fill"></i>--}}
-{{--                        <span>Department Folders</span>--}}
-{{--                    </a>--}}
-{{--                    <ul class="submenu {{set_active(['form/view/detail'])}}">--}}
-{{--                        <li class="submenu-item {{set_active(['form/view/detail'])}}">--}}
-{{--                            <a href="{{ route('form/view/detail') }}">Operation</a>--}}
-{{--                        </li>--}}
-{{--                        <li class="submenu-item {{set_active(['form/view/details'])}}">--}}
-{{--                            <a href="{{ route('form/view/detail') }}">ICT</a>--}}
-{{--                        </li>--}}
-{{--                        <li class="submenu-item {{set_active(['form/view/detailss'])}}">--}}
-{{--                            <a href="{{ route('form/view/detail') }}">Treasury</a>--}}
-{{--                        </li>--}}
-{{--                    </ul>--}}
-{{--                </li>--}}
+                <li class="sidebar-item  has-sub
+{{--                {{set_active(['form/staff/new','form/checkbox/new'])}}--}}
+                ">
+                    <a href="#" class='sidebar-link'>
+                        <i class="bi bi-file-earmark-medical-fill"></i>
+                        <span>Document Levels</span>
+                    </a>
+                    <ul class="submenu
+{{--                    {{set_active(['form/staff/new','form/checkbox/new'])}}--}}
+                    ">
+                        <li class="submenu-item
+{{--                        {{set_active(['form/staff/new'])}}--}}
+                        ">
+                            <a
+{{--                                    href="{{ route('form/staff/new') }}"--}}
+                            >OutDoor Docs</a>
+                        </li>
+                        <li class="submenu-item
+{{--                         {{set_active(['form/checkbox/new'])}}--}}
+                         ">
+                            <a
+{{--                                    href="{{ route('form/checkbox/new') }}"--}}
+                            >
+                                InHouse Docs</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-item  has-sub
+{{--                {{set_active(['form/view/detail'])}}--}}
+                ">
+                    <a href="#" class='sidebar-link'>
+                        <i class="bi bi-grid-1x2-fill"></i>
+                        <span>Department Folders</span>
+                    </a>
+                    <ul class="submenu
+{{--                    {{set_active(['form/view/detail'])}}--}}
+                    ">
+                        <li class="submenu-item
+{{--                        {{set_active(['form/view/detail'])}}--}}
+                        ">
+                            <a
+{{--                                    href="{{ route('form/view/detail') }}"--}}
+                            >Operation</a>
+                        </li>
+                        <li class="submenu-item {{set_active(['form/view/details'])}}">
+                            <a
+{{--                                    href="{{ route('form/view/detail') }}"--}}
+                            >ICT</a>
+                        </li>
+                        <li class="submenu-item
+{{--                        {{set_active(['form/view/detailss'])}}--}}
+                        ">
+                            <a
+{{--                                    href="{{ route('form/view/detail') }}"--}}
+                            >Treasury</a>
+                        </li>
+                    </ul>
+                </li>
 
             </ul>
         </div>
