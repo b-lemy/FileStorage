@@ -60,7 +60,7 @@
                             <option selected disabled>Select Role Name</option>
                             @if ($roles->count() > 0)
                                 @foreach($roles as $role)
-                                    <option value={{$role->role_type}}>{{$role->role_type}}</option>
+                                    <option value={{$role->role_type}} >{{$role->role_type}}</option>
                                 @endforeach
                             @endif
                         </select>
