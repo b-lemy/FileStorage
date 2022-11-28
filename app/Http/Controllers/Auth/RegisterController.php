@@ -39,6 +39,7 @@ class RegisterController extends Controller
             'firstname'      => $request->firstname,
             'lastname'      => $request->lastname,
             'avatar'    => $request->image,
+            "role_name" =>$request->role_name,
             'email'     => $request->email,
             'join_date' => $todayDate,
             'role_name' => $request->role_name,

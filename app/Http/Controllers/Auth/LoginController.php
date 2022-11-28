@@ -6,14 +6,12 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
-use Auth;
-use DB;
-use App\Models\User;
 use Carbon\Carbon;
-use Session;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 use Brian2694\Toastr\Facades\Toastr;
-use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Http;
+
 
 class LoginController extends Controller
 {

@@ -47,7 +47,7 @@
                                 <span>Role Name:</span>
                                 <span class="badge bg-success">Admin</span>
                             @endif
-                            @if (Auth::user()->role_name=='Normal User')
+                            @if (Auth::user()->role_name=='Normal')
                                 <span>Name: <span
                                             class="fw-bolder">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</span></span>
                                 <hr>
