@@ -35,6 +35,7 @@ class RegisterController extends Controller
         $dt        = Carbon::now();
         $todayDate = $dt->toDayDateTimeString();
 
+
         User::create([
             'firstname'      => $request->firstname,
             'lastname'      => $request->lastname,
@@ -42,7 +43,6 @@ class RegisterController extends Controller
             "role_name" =>$request->role_name,
             'email'     => $request->email,
             'join_date' => $todayDate,
-            'role_name' => $request->role_name,
             'password'  => Hash::make($request->password),
         ]);
         Toastr::success('Create new account successfully :)','Success');
