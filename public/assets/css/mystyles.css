@@ -250,3 +250,13 @@ a:hover{
     outline: none;
 }
 
+/*upload button*/
+.upload{
+    color: whitesmoke;
+    font-weight: bolder;
+    border-radius: 7px;
+    padding: 7px 28px;
+    border: none;
+    outline: none;
+    background-color: #435ebe
+}

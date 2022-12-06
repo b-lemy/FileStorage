@@ -29,6 +29,8 @@
                     </button>
                     <div class="dropdown-content">
                         <div data-bs-toggle="modal" data-bs-target="#default">Account</div>
+
+                        @extends('snippets.userProfile')
                         <div>
                             <a class="change_password" href="{{ route('change/password') }}">Change Password</a>
                         </div>
@@ -47,9 +49,9 @@
             {!! Toastr::message() !!}
             <div class="page-content">
                 <section class="row">
-                    <div class="col-12 col-lg-8">
-                        <div class="row">
-                            <div class="col-6 col-lg-4 col-md-6">
+                    <div class="col-12 col-lg-12">
+                        <div class="row" style="justify-content: space-around">
+                            <div class="col-6 col-lg-3 col-md-6">
                                 <div class="card">
                                     <div class="card-body px-3 py-4-5">
                                         <div class="row">
@@ -66,7 +68,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-6 col-lg-4 col-md-6">
+                            <div class="col-6 col-lg-3 col-md-6">
                                 <div class="card">
                                     <div class="card-body px-3 py-4-5">
                                         <div class="row">
@@ -83,7 +85,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-6 col-lg-4 col-md-6">
+                            <div class="col-6 col-lg-3 col-md-6">
                                 <div class="card">
                                     <div class="card-body px-3 py-4-5">
                                         <div class="row">
@@ -106,7 +108,13 @@
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-header">
+                                        <div style="display: flex;
+                                         justify-content: space-between;
+                                         padding-right: 50px;
+                                         padding-left: 50px">
                                         <h4>Recent Files</h4>
+                                            <div class="upload" data-bs-toggle="modal" data-bs-target="#fileuploader">Upload</div>
+                                        </div>
                                     </div>
                                     <div class="card-body">
                                         <table class="table table-striped" id="table1">
@@ -133,7 +141,7 @@
                                                     <td class="tableStyle">{{ $item->sender->firstname }}</td>
                                                     <td class="tableStyle">Head Quarters</td>
                                                     <td class="tableStyle">ICT</td>
-                                                    <td class="tableStyle">Jassen</td>
+                                                    <td class="tableStyle">Blessing</td>
                                                     <td class="delete icon"><a
                                                                 href="{{url('home/download/'.$item->id)}}">
                                                             <img style="width: auto ; height:20px"
@@ -276,100 +284,11 @@
                             {{--                        </div>--}}
                             {{--                    </div>--}}
                         </div>
-
-                        <div class="bg-white p-8 shadow-lg shadow-slate-200 rounded-lg w-full md:w-2/3 lg:w-1/3">
-                            <div class="flex items-center justify-between">
-                                <span class="text-slate-400 text-sm text-slate-500">Progress 1</span>
-                                <span class="px-2 py-1 bg-teal-50 rounded-lg text-xs text-teal-400 font-medium min-w-[46px] text-center">0%</span>
-                            </div>
-                            <div class="w-full bg-slate-100 h-1 mb-6 mt-2">
-                                <div class="bg-teal-400 h-1 rounded" style="width: 0%"></div>
-                            </div>
-                            <div class="flex items-center justify-between">
-                                <span class="text-slate-400 text-sm text-slate-500">Progress 2</span>
-                                <span class="px-2 py-1 bg-teal-50 rounded-lg text-xs text-teal-400 font-medium min-w-[46px] text-center">25%</span>
-                            </div>
-                            <div class="w-full bg-slate-100 h-1 mb-6 mt-2">
-                                <div class="bg-teal-400 h-1 rounded" style="width: 25%"></div>
-                            </div>
-                            <div class="flex items-center justify-between">
-                                <span class="text-slate-400 text-sm text-slate-500">Progress 3</span>
-                                <span class="px-2 py-1 bg-teal-50 rounded-lg text-xs text-teal-400 font-medium min-w-[46px] text-center">50%</span>
-                            </div>
-                            <div class="w-full bg-slate-100 h-1 mb-6 mt-2">
-                                <div class="bg-teal-400 h-1 rounded" style="width: 50%"></div>
-                            </div>
-                            <div class="flex items-center justify-between">
-                                <span class="text-slate-400 text-sm text-slate-500">Progress 4</span>
-                                <span class="px-2 py-1 bg-teal-50 rounded-lg text-xs text-teal-400 font-medium min-w-[46px] text-center">75%</span>
-                            </div>
-                            <div class="w-full bg-slate-100 h-1 mb-6 mt-2">
-                                <div class="bg-teal-400 h-1 rounded" style="width: 75%"></div>
-                            </div>
-                            <div class="flex items-center justify-between">
-                                <span class="text-slate-400 text-sm text-slate-500">Progress 5</span>
-                                <span class="px-2 py-1 bg-teal-50 rounded-lg text-xs text-teal-400 font-medium min-w-[46px] text-center">100%</span>
-                            </div>
-                            <div class="w-full bg-slate-100 h-1 mt-2">
-                                <div class="bg-teal-400 h-1 rounded" style="width: 100%"></div>
-                            </div>
-                        </div>
                     </div>
-                    <div class="col-12 col-lg-4">
 
-                        <div class="card">
-                            <div class="card-header">
-                                <h4>Share a File</h4>
-                            </div>
-                            <div class="card-content pb-4">
-                                <div class="recent-message d-flex px-4 py-3">
-                                    <form class="flex items-center space-x-6" method="POST"
-                                          enctype="multipart/form-data" action="{{ route('home') }}">
-                                        @csrf
-                                        <label class="block mb-5">
-                                            <span style="padding-right: 10px;">Choose a file/folder</span>
-                                            <input type="file" name="file" class="uploadBox block
-                                             w-full text-sm text-slate-50 file:mr-4 file:py-2 file:px-4
 
-                                          "/>
+                        @include('snippets.fileSharing')
 
-                                        </label>
-                                        <label class="block mb-5">
-                                            <span class="sr-only">Choose a Branch :</span>
-                                            <input type="text" name="name"
-                                                   class="  my_input"
-                                            />
-
-                                        </label>
-                                        <label class="block mb-5">
-                                            <span class="sr-only">Choose a Department :</span>
-                                            <input type="text" name="name"
-                                                   class=" my_input"/>
-
-                                        </label>
-                                        <label class="block mb-5">
-                                            <span class="sr-only">Choose a Name :</span>
-                                            <input type="text" name="name"
-                                                   class=" my_input"/>
-
-                                        </label>
-                                        <div class="px-5">
-                                            <button class='btn btn-block btn-success font-bold mt-5'>Share</button>
-                                        </div>
-                                    </form>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="card">
-                            {{--                    <div class="card-header">--}}
-                            {{--                        <h4>Visitors Profile</h4>--}}
-                            {{--                    </div>--}}
-                            {{--                    <div class="card-body">--}}
-                            {{--                        <div id="chart-visitors-profile"></div>--}}
-                            {{--                    </div>--}}
-                        </div>
-                    </div>
                 </section>
             </div>
         </div>
@@ -387,106 +306,4 @@
 
 
 
-{{-- user profile modal --}}
-<div class="card-body my-0">
-    <!--Basic Modal -->
-    <div class="modal fade text-left" id="default" tabindex="-1" aria-labelledby="myModalLabel1"
-         style="display: none;" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="myModalLabel1">User Profile</h5>
-                    <button type="button" class="close rounded-pill" data-bs-dismiss="modal" aria-label="Close">
-                        <i data-feather="x"></i>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="form-body">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <label>Full Name</label>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="form-group has-icon-left">
-                                    <div class="position-relative">
-                                        <input type="text" class="form-control" name="fullName"
-                                               value="{{ Auth::user()->name }}" readonly>
-                                        <div class="form-control-icon">
-                                            <i class="bi bi-person"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <label>Email Address</label>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="form-group has-icon-left">
-                                    <div class="position-relative">
-                                        <input type="email" class="form-control" name="email"
-                                               value="{{ Auth::user()->email }}" readonly>
-                                        <div class="form-control-icon">
-                                            <i class="bi bi-envelope"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <label>Mobile Number</label>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="form-group has-icon-left">
-                                    <div class="position-relative">
-                                        <input type="number" class="form-control"
-                                               value="{{ Auth::user()->phone_number }}" readonly>
-                                        <div class="form-control-icon">
-                                            <i class="bi bi-phone"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <label>Status</label>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="form-group has-icon-left">
-                                    <div class="position-relative">
-                                        <input type="text" class="form-control" value="{{ Auth::user()->status }}"
-                                               readonly>
-                                        <div class="form-control-icon">
-                                            <i class="bi bi-bag-check"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <label>Role Name</label>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="form-group has-icon-left">
-                                    <div class="position-relative">
-                                        <input type="text" class="form-control" value="{{ Auth::user()->role_name }}"
-                                               readonly>
-                                        <div class="form-control-icon">
-                                            <i class="bi bi-exclude"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary ml-1" data-bs-dismiss="modal">
-                        <i class="bx bx-check d-block d-sm-none"></i>
-                        <span class="d-none d-sm-block">Close</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-{{-- end user profile modal --}}
 

@@ -24,7 +24,7 @@ class HomeController extends Controller
 
         $users = DB::table('users')->count();
         $user_activity_logs = DB::table('user_activity_logs')->count();
-
+//        $file = Auth()->user()->file;
         $file = File::with('sender')->where('user_id',Auth::id())->get();
         return view('dashboard.home', compact('users', 'user_activity_logs', 'file'));
     }
