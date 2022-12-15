@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\FileRequest;
 use App\Models\File;
+use App\Models\Form;
+use App\Models\User;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 
@@ -21,12 +23,10 @@ class HomeController extends Controller
     /** home page */
     public function index()
     {
-
-        $users = DB::table('users')->count();
+        $users = User::where('id', '!=' , Auth::user()->id)->get();
         $user_activity_logs = DB::table('user_activity_logs')->count();
-//        $file = Auth()->user()->file;
-        $file = File::with('sender')->where('user_id',Auth::id())->get();
-        return view('dashboard.home', compact('users', 'user_activity_logs', 'file'));
+        $file = File::with('sender')->where('receiver',Auth::user()->id)->get();
+        return view('dashboard.home', compact('users', 'user_activity_logs' ,'file'));
     }
 
 
@@ -50,26 +50,5 @@ class HomeController extends Controller
 
 
     }
-
-
-//if($request->hasFile('receipt_attachment')){
-//
-//$document = $request->file('receipt_attachment');
-//
-//$filename = !is_null($request->control_number) ? $request->control_number.'.'.$document->getClientOriginalExtension() :  time().'_'.$document->getClientOriginalName();
-//
-//$destination = storage_path('app/public/payments');
-//
-//$document->move($destination , $filename);
-//
-//}else{
-//
-//
-//
-//    return redirect()->back()->with('error' , 'application failed No receiptattachment');
-//
-//}
-
-
 }
 

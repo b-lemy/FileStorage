@@ -258,5 +258,6 @@ a:hover{
     padding: 7px 28px;
     border: none;
     outline: none;
-    background-color: #435ebe
+    background-color: #435ebe;
+    cursor:pointer;
 }

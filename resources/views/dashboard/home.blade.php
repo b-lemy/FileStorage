@@ -96,7 +96,7 @@
                                             </div>
                                             <div class="col-md-8">
                                                 <h6 class="text-muted font-semibold">My Files</h6>
-                                                <h6 class="font-extrabold mb-0">{{ $users }}</h6>
+                                                <h6 class="font-extrabold mb-0">{{ $users->count() }}</h6>
                                             </div>
                                         </div>
                                     </div>
@@ -141,7 +141,7 @@
                                                     <td class="tableStyle">{{ $item->sender->firstname }}</td>
                                                     <td class="tableStyle">Head Quarters</td>
                                                     <td class="tableStyle">ICT</td>
-                                                    <td class="tableStyle">Blessing</td>
+                                                    <td class="tableStyle">Receiver</td>
                                                     <td class="delete icon"><a
                                                                 href="{{url('home/download/'.$item->id)}}">
                                                             <img style="width: auto ; height:20px"

@@ -43,8 +43,13 @@
                             </label>
                             <label class="block mb-4">
                                 <span class="sr-only">Choose a Name :</span>
-                                <input type="text" name="name"
-                                       class=" my_input"/>
+                                <select name="receiver"
+                                        class=" my_input">
+                                    @foreach($users as $user)
+                                    <option value={{$user->id}}>{{$user->firstname}} {{$user->lastname}} </option>
+                                    @endforeach
+                                </select>
+
 
                             </label>
                             <div class="px-5">
