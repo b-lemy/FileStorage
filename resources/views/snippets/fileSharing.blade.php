@@ -44,7 +44,7 @@
                             <label class="block mb-4">
                                 <span class="sr-only">Choose a Name :</span>
                                 <select class="my_input" name="receiver"
-                                        >
+                                      required  >
                                     <option value="">--select--</option>
                                     @foreach($users as $user)
                                     <option value={{$user->id}}> {{$user->firstname}} {{$user->lastname}} </option>

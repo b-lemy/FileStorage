@@ -2,7 +2,7 @@
 {{-- user profile modal --}}
 <div class="card-body my-0">
     <!--Basic Modal -->
-    <div class="modal fade text-left" id="default" tabindex="-1" aria-labelledby="myModalLabel1"
+    <div class="modal fade" id="default" tabindex="-1" aria-labelledby="myModalLabel1"
          style="display: none;" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable" role="document">
             <div class="modal-content">
