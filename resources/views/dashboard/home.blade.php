@@ -112,8 +112,10 @@
                                          justify-content: space-between;
                                          padding-right: 50px;
                                          padding-left: 50px">
-                                        <h4>Recent Files</h4>
-                                            <div class="upload" data-bs-toggle="modal" data-bs-target="#fileuploader">Upload</div>
+                                            <h4>Recent Files</h4>
+                                            <div class="upload" data-bs-toggle="modal" data-bs-target="#fileuploader">
+                                                Upload
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="card-body">
@@ -126,7 +128,7 @@
                                                 <th>Sender</th>
                                                 <th>Branch</th>
                                                 <th>Department</th>
-                                                <th>Receiver</th>
+
                                                 <th>Access</th>
                                             </tr>
                                             </thead>
@@ -141,12 +143,20 @@
                                                     <td class="tableStyle">{{ $item->sender->firstname }}</td>
                                                     <td class="tableStyle">Head Quarters</td>
                                                     <td class="tableStyle">ICT</td>
-                                                    <td class="tableStyle">Receiver</td>
-                                                    <td class="delete icon"><a
-                                                                href="{{url('home/download/'.$item->id)}}">
-                                                            <img style="width: auto ; height:20px"
-                                                                 src="{{ asset('/images/myIcons/download.png') }}">
-                                                        </a></td>
+                                                    <td class="tableIcons">
+                                                        <div><a href="{{url('home/download/'.$item->id)}}">
+                                                                <img style="width: auto ; height:20px"
+                                                                     src="{{ asset('/images/myIcons/download.png') }}">
+                                                            </a>
+                                                        </div>
+                                                        <div>
+
+                                                            <a href="{{url('home/delete/'.$item->id)}}">
+                                                                <img style="width: auto ; height:16px"
+                                                                     src="{{ asset('/images/myIcons/delete.png') }}">
+                                                            </a>
+                                                        </div>
+                                                    </td>
                                                 </tr>
                                             @endforeach
                                             </tbody>
@@ -287,7 +297,7 @@
                     </div>
 
 
-                        @include('snippets.fileSharing')
+                    @include('snippets.fileSharing')
 
                 </section>
             </div>
