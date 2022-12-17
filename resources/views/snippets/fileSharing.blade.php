@@ -43,10 +43,11 @@
                             </label>
                             <label class="block mb-4">
                                 <span class="sr-only">Choose a Name :</span>
-                                <select name="receiver"
-                                        class=" my_input">
+                                <select class="my_input" name="receiver"
+                                      required  >
+                                    <option value="">--select--</option>
                                     @foreach($users as $user)
-                                    <option value={{$user->id}}>{{$user->firstname}} {{$user->lastname}} </option>
+                                    <option value={{$user->id}}> {{$user->firstname}} {{$user->lastname}} </option>
                                     @endforeach
                                 </select>
 

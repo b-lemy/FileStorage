@@ -99,6 +99,7 @@ Route::controller(UserManagementController::class)->group(function () {
 Route::controller(FileController::class)->group(function (){
 //   Route::post('file', 'store')->name('file');
     Route::get('home/download/{id}', 'DLoad')->name('home/download');
+    Route::get('home/delete/{file}', 'destroy')->name('home/delete');
 });
 
 

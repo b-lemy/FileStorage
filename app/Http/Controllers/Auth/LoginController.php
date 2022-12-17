@@ -44,8 +44,6 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except([
             'logout',
-            'locked',
-            'unlock'
         ]);
     }
 
@@ -96,7 +94,7 @@ class LoginController extends Controller
         Session::put('user', $user);
         $user = Session::get('user');
 
-        $name       = $user->name;
+        $name       = $user->firstname;
         $email      = $user->email;
         $dt         = Carbon::now();
         $todayDate  = $dt->toDayDateTimeString();

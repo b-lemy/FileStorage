@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\File;
 use App\Models\User;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Response;
@@ -52,8 +53,15 @@ class FileController extends Controller
     }
 
 
-    public function destroy(File $file)
+    public function destroy($id)
     {
-        //
+        $file = File::find($id);
+        if(Storage::exists('public/'.$file->file)){
+            Storage::delete('public/'.$file->file);
+        }
+        $file->delete();
+        Toastr::info('File Deleted Successfully :)', 'Deleted');
+
+        return redirect('/home');
     }
 }

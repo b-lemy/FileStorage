@@ -13,9 +13,10 @@
     <link rel="stylesheet" href="{{ URL::to('assets/vendors/bootstrap-icons/bootstrap-icons.css') }}">
     <link rel="stylesheet" href="{{ URL::to('assets/css/app.css') }}">
     <link rel="shortcut icon" href="{{ URL::to('assets/images/favicon.svg') }}" type="image/x-icon">
-    <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
+{{--    <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />--}}
     <link rel="stylesheet" href="{{ URL::to('assets/vendors/simple-datatables/style.css') }}">
     <link rel="stylesheet" href="{{ URL::to('assets/css/mystyles.css') }}">
+{{--    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />--}}
 
 
     {{-- message toastr --}}
@@ -42,20 +43,21 @@
 
     </div>
 
-    <script>
-        // Get a reference to the file input element
-        const inputElement = document.querySelector('input[type="file"]');
+{{--    <script>--}}
+{{--        // Get a reference to the file input element--}}
+{{--        const inputElement = document.querySelector('input[type="file"]');--}}
 
-        // Create a FilePond instance
-        const pond = FilePond.create(inputElement);
-    </script>
+{{--        // Create a FilePond instance--}}
+{{--        const pond = FilePond.create(inputElement);--}}
+{{--    </script>--}}
 
     <script src="{{ URL::to('assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
     <script src="{{ URL::to('assets/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ URL::to('assets/vendors/apexcharts/apexcharts.js') }}"></script>
     <script src="{{ URL::to('assets/js/pages/dashboard.js') }}"></script>
     <script src="{{ URL::to('assets/js/main.js') }}"></script>
-    <script src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
+{{--    <script src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>--}}
+{{--    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>--}}
 
     <script src="{{ URL::to('assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
     <script src="{{ URL::to('assets/js/bootstrap.bundle.min.js') }}"></script>
@@ -66,7 +68,6 @@
         let table1 = document.querySelector('#table1');
         let dataTable = new simpleDatatables.DataTable(table1);
     </script>
-
     <script src="{{ URL::to('assets/js/main.js') }}"></script>
 
 
