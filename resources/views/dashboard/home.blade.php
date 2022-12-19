@@ -156,7 +156,7 @@
                                                                 <img data-bs-toggle="modal" data-bs-target="#deleteModal"
                                                                      data-id="" style="width: auto ; height:16px"
                                                                      src="{{ asset('/images/myIcons/delete.png') }}">
-                                                                @extends('snippets.areyousure')
+                                                                @include('snippets.areyousure')
                                                             </a>
                                                         </div>
                                                     </td>

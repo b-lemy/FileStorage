@@ -22,7 +22,7 @@
                                 <div class="form-group has-icon-left">
                                     <div class="position-relative">
                                         <input type="text" class="form-control" name="fullName"
-                                               value="{{ Auth::user()->name }}" readonly>
+                                               value="{{ Auth::user()->firstname }}" readonly>
                                         <div class="form-control-icon">
                                             <i class="bi bi-person"></i>
                                         </div>
