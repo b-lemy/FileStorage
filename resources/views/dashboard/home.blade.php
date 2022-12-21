@@ -28,6 +28,9 @@
                         </div>
                     </button>
                     <div class="dropdown-content">
+                        <div>
+                            <a class="change_password" href="{{ route('change/password') }}">Profile</a>
+                        </div>
                         <div data-bs-toggle="modal" data-bs-target="#default">Account</div>
 
                         @extends('snippets.userProfile')
