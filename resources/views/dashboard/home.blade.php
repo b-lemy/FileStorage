@@ -128,6 +128,7 @@
                                             <tr>
                                                 <th>No</th>
                                                 <th>FileName</th>
+                                                <th>When</th>
                                                 <th>Sender</th>
                                                 <th>Branch</th>
                                                 <th>Department</th>
@@ -143,6 +144,7 @@
                                                         <img style="width: auto ; height:20px"
                                                              src="{{ asset('/images/myIcons/file.png') }}"/>
                                                         {{ $item->filename }}</td>
+                                                    <td class="tableStyle">{{ $item->created_at->diffForHumans(['parts'=>2])}}</td>
                                                     <td class="tableStyle">{{ $item->sender->firstname }}</td>
                                                     <td class="tableStyle">Head Quarters</td>
                                                     <td class="tableStyle">ICT</td>
