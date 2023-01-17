@@ -50,5 +50,27 @@ class HomeController extends Controller
 
 
     }
+
+
+    public function uploadProfile(Request $request){
+
+        if ($request ->hasFile('profile')){
+            $profile = $request->file('profile');
+            $extension = $profile->getClientOriginalExtension();
+            $profilePic = time().'.'.$extension;
+            $profile ->storeAs('profile', $profilePic, 'public');
+        }
+
+        $file = $user->file()->create([
+            'branch' => $request->input('branch'),
+            'department' => $request->input('department'),
+            'receiver' => $request->input('receiver'),
+        ]);
+
+        Toastr::success('File Uploaded Successfully :)', 'Success');
+
+        return redirect('/home');
+
+    }
 }
 
