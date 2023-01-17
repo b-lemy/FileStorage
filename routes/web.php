@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FileController;
+use App\Http\Controllers\PDFController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -100,7 +101,10 @@ Route::controller(FileController::class)->group(function (){
 //   Route::post('file', 'store')->name('file');
     Route::get('home/download/{id}', 'DLoad')->name('home/download');
     Route::get('home/delete/{file}', 'destroy')->name('home/delete');
+
 });
+
+Route::get('generate-pdf', [PDFController::class, 'generatePDF']);
 
 
 

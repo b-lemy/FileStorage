@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\File;
 use App\Models\User;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -35,10 +36,6 @@ class FileController extends Controller
         return $request->file('file')->store("docs");
     }
 
-    public function show(File $file)
-    {
-        //
-    }
 
 
     public function edit(File $file)

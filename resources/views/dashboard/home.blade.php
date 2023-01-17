@@ -150,9 +150,7 @@
                                                             </a>
                                                         </div>
                                                         <div>
-
-                                                            {{--                                                            <a href="{{url('home/delete/'.$item->id)}}">--}}
-                                                            <a>
+                                                            <a href="{{url('home/delete/'.$item->id)}}">
                                                                 <img data-bs-toggle="modal" data-bs-target="#deleteModal"
                                                                      data-id="" style="width: auto ; height:16px"
                                                                      src="{{ asset('/images/myIcons/delete.png') }}">
@@ -203,7 +201,4 @@
     </div>
 
 @endsection
-
-
-
 
