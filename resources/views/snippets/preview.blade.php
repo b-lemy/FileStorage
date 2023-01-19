@@ -17,17 +17,19 @@
 
 <table class="table table-bordered">
     <tr>
-        <th>ID</th>
         <th>Name</th>
-        <th>Email</th>
+        <th>Title</th>
+        <th>Signature</th>
+        <th>Date</th>
     </tr>
-    @foreach($users as $user)
+
         <tr>
-            <td>{{ $user->id }}</td>
-            <td>{{ $user->firstname }}</td>
+            <td>{{ $user->firstname }} {{ $user->lastname}}</td>
+            <td>{{ $user->role }}</td>
             <td>{{ $user->email }}</td>
+            <td>{{ $date}}</td>
         </tr>
-    @endforeach
+
 </table>
 </body>
 </html>

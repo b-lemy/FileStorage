@@ -5,21 +5,23 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PDFController extends Controller
 {
 
     public function generatePDF()
     {
-        $users = User::get();
+        $users = Auth::user();
+
 
 
 
 
         $data = [
             'title' => 'Credit Form',
-            'date' => date('m/d/Y'),
-            'users' => $users,
+            'date' => date('d/m/Y'),
+            'user' => $users,
 
         ];
 
