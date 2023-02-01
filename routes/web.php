@@ -106,5 +106,9 @@ Route::controller(FileController::class)->group(function (){
 
 Route::get('home/generate', [PDFController::class, 'generatePDF']);
 
+Route::get('hash', function(){
+    return  \Illuminate\Support\Facades\Hash::make('12345678');
+});
+
 
 
