@@ -6,6 +6,7 @@ use App\Http\Requests\FileRequest;
 use App\Models\File;
 use App\Models\Form;
 use App\Models\User;
+use App\Notifications\FileSentNotification;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 
@@ -45,6 +46,8 @@ class HomeController extends Controller
         ]);
 
         Toastr::success('File Uploaded Successfully :)', 'Success');
+
+        $user->notify(new FileSentNotification());
 
         return redirect('/home');
 

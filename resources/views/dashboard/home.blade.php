@@ -144,7 +144,7 @@
                                                         <img style="width: auto ; height:20px"
                                                              src="{{ asset('/images/myIcons/file.png') }}"/>
                                                         {{ $item->filename }}</td>
-                                                    <td class="tableStyle">{{ $item->created_at->diffForHumans(['parts'=>2])}}</td>
+                                                    <td class="tableStyle">{{ $item->created_at->diffForHumans(['parts'=>1])}}</td>
                                                     <td class="tableStyle">{{ $item->sender->firstname }}</td>
                                                     <td class="tableStyle">Head Quarters</td>
                                                     <td class="tableStyle">ICT</td>
@@ -155,12 +155,11 @@
                                                             </a>
                                                         </div>
                                                         <div>
-                                                            <a href="{{url('home/delete/'.$item->id)}}">
-                                                                <img data-bs-toggle="modal" data-bs-target="#deleteModal"
-                                                                     data-id="" style="width: auto ; height:16px"
-                                                                     src="{{ asset('/images/myIcons/delete.png') }}">
-                                                                @include('snippets.areyousure')
-                                                            </a>
+                                                            <img data-bs-toggle="modal" data-bs-target="#deleteModal"
+                                                                 data-id="" style="width: auto ; height:16px"
+                                                                 src="{{ asset('/images/myIcons/delete.png') }}">
+                                                            @include('snippets.areyousure')
+
                                                         </div>
                                                     </td>
                                                 </tr>
