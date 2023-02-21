@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Notification;
 
 class HomeController extends Controller
 {
@@ -24,11 +25,13 @@ class HomeController extends Controller
     /** home page */
     public function index()
     {
-        $users = User::where('id', '!=' , Auth::user()->id)->get();
+        $users = User::where('id', '!=', Auth::user()->id)->get();
         $user_activity_logs = DB::table('user_activity_logs')->count();
-        $file = File::with('sender')->where('receiver',Auth::user()->id)->get();
-        return view('dashboard.home', compact('users', 'user_activity_logs' ,'file'));
+        $file = File::with('sender')->where('receiver', Auth::user()->id)->latest()->get();
+        return view('dashboard.home', compact('users', 'user_activity_logs', 'file'));
     }
+
+
 
 
     public function store(FileRequest $request)
@@ -47,7 +50,26 @@ class HomeController extends Controller
 
         Toastr::success('File Uploaded Successfully :)', 'Success');
 
-        $user->notify(new FileSentNotification());
+        $requested =User::where('id', '=', $file->receiver)->get();
+//        return $requested;
+
+//        $requestedUser = DB::table('users')
+//            ->join('files', 'users.id', '=', 'files.user_id')
+//            ->where('files.user_id', '=', $file->receiver)
+//            ->distinct()
+//            ->get();
+
+        $fileSent = User::where('id', '=', $user)->get();
+//        return implode(',',$fileSent);
+
+
+//        $fileSent = DB::table('users')->where('id', '=', $file->user_id)->get();
+
+//        $requestedUser->notify(new FileSentNotification());
+
+        Notification::send($requested ,new FileSentNotification($user));
+
+
 
         return redirect('/home');
 
@@ -55,13 +77,15 @@ class HomeController extends Controller
     }
 
 
-    public function uploadProfile(Request $request){
+    public function uploadProfile(Request $request)
+    {
+        $user = Auth::user();
 
-        if ($request ->hasFile('profile')){
+        if ($request->hasFile('profile')) {
             $profile = $request->file('profile');
             $extension = $profile->getClientOriginalExtension();
-            $profilePic = time().'.'.$extension;
-            $profile ->storeAs('profile', $profilePic, 'public');
+            $profilePic = time() . '.' . $extension;
+            $profile->storeAs('profile', $profilePic, 'public');
         }
 
         $file = $user->file()->create([

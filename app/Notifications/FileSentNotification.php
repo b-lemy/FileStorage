@@ -11,14 +11,16 @@ class FileSentNotification extends Notification
 {
     use Queueable;
 
+    protected $file;
+
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($fileSent)
     {
-        //
+      $this->file = $fileSent;
     }
 
     /**
@@ -29,20 +31,14 @@ class FileSentNotification extends Notification
      */
     public function via($notifiable)
     {
-        return ['mail'];
+        return ['database','mail'];
     }
 
-    /**
-     * Get the mail representation of the notification.
-     *
-     * @param  mixed  $notifiable
-     * @return \Illuminate\Notifications\Messages\MailMessage
-     */
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('A file was sent to you.')
-                    ->action('Notification Action', url('/'))
+                    ->line('hey '. $this->file->firstname . ' sent you an file')
+                    ->action('Notification Action', url('/home'))
                     ->line('Thank you for using our application!');
     }
 
@@ -55,7 +51,7 @@ class FileSentNotification extends Notification
     public function toArray($notifiable)
     {
         return [
-            //
+          "name" => $this->file->firstname
         ];
     }
 }
