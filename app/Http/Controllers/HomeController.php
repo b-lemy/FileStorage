@@ -25,10 +25,11 @@ class HomeController extends Controller
     /** home page */
     public function index()
     {
+        $user = auth()->user()->unreadNotifications;
         $users = User::where('id', '!=', Auth::user()->id)->get();
         $user_activity_logs = DB::table('user_activity_logs')->count();
         $file = File::with('sender')->where('receiver', Auth::user()->id)->latest()->get();
-        return view('dashboard.home', compact('users', 'user_activity_logs', 'file'));
+        return view('dashboard.home', compact('users', 'user_activity_logs', 'file','user'));
     }
 
 
@@ -68,6 +69,14 @@ class HomeController extends Controller
 //        $requestedUser->notify(new FileSentNotification());
 
         Notification::send($requested ,new FileSentNotification($user));
+//
+//        if(Auth::user() === $requested){
+//
+//            Toastr::success('File was sent to you :)', 'Success');
+//
+//        }
+
+
 
 
 

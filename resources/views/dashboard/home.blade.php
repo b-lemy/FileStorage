@@ -52,6 +52,14 @@
             {!! Toastr::message() !!}
             <div class="page-content">
                 <section class="row">
+                        @foreach ($user as $notification)
+                            @if(auth()->user()->id === $notification->notifiable_id)
+                            <div class="alert alert-success p-0">
+                                <h6>{{$notification->data['name']}} sent you a file</h6>
+                            </div>
+                            @endif
+                        @endforeach
+
                     <div class="col-12 col-lg-12">
                         <div class="row" style="justify-content: space-around">
                             <div class="col-6 col-lg-3 col-md-6">
@@ -165,8 +173,6 @@
                                                 </tr>
                                             @endforeach
                                             </tbody>
-
-
                                         </table>
 
                                     </div>
@@ -187,6 +193,7 @@
                         </div>
 
                     </div>
+
 
 
                     @include('snippets.fileSharing')
